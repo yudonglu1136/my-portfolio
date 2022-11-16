@@ -19,8 +19,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+
      {/* Hero*/}
-    
     <section id="hero" className="snap-start">
         <Hero />
       </section>
@@ -29,7 +29,7 @@ export default function Home() {
     <section id="about" className="snap-center">
       <About />
     </section>
-    
+
     {/*Experience*/}
     <section id="experience" className="snap-center">
       <WorkExperience />
