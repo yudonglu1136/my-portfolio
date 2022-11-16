@@ -19,7 +19,8 @@ function WorkExperience({}:Props){
 		Experience
 		</h3>
 		
-		<div className="w-full flex space-x-5 p-10 snap-x overflow-x-scroll snap-mandatory">
+		<div className="w-full flex space-x-5 p-10 snap-x overflow-x-scroll snap-mandatory 
+		scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]">
 			<ExperienceCard />
 			<ExperienceCard />
 			<ExperienceCard />
