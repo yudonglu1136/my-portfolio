@@ -19,11 +19,11 @@ export default function ExperienceCard({}: Props){
 		viewport={{once:true}}
 		
 		className="w-22 h-22 rounded-full md: w-[150px] md: h-[150px] xl:w-[150px] xl:h-[150px] object-cover
-		object-center"
+		object-center "
 		src="https://yudonglu.s3.amazonaws.com/youview-logo.jpeg"
 		/>
 
-		<div className="px-0 md:px-10">
+		<div className="px-0 md:px-10 ">
 			<h4 className="text-2xl font-light">Software Development Intern</h4>
 			<p className="font-bold text-1.5xl mt-1">YouView</p>
 			
@@ -35,11 +35,14 @@ export default function ExperienceCard({}: Props){
 			</div>
 			<p className="uppercase py-5 text-gray-300 text-1xl">Started work - Ended</p>
 
-			<ul className="list-disc space-y-4 ml-5 text-lg">
-				<li>summary</li>
-				<li>summary</li>
-				<li>summary</li>
-				<li>summary</li>
+			<ul className="list-disc space-y-4 ml-5 text-lg h-50 overflow-y-scroll">
+				<li>summary summary summary</li>
+				<li>summary summary summary summary</li>
+				<li>summary summary summary summary</li>
+				<li>summary summary summary summary</li>
+				<li>summary summary summary summary</li>
+				<li>summary summary summary summary</li>
+
 			</ul>
 		</div>
 
