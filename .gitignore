@@ -8,6 +8,7 @@ packages/next/wasm/@next
 
 # dependencies
 /node_modules
+sanity/node_modules
 
 
 /.pnp
