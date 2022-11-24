@@ -3,30 +3,35 @@ import React from "react";
 import {Cursor, useTypewriter} from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Link from 'next/link'
-
-type Props = {};
-export default function Hero({}: Props){
+import PageInformation from "../typings";
+import {urlFor} from "../sanity";
+type Props = {
+	pageInformation: PageInformation
+};
+export default function Hero({pageInformation}: Props){
 	const [text, count] = useTypewriter({
 		words: [
-		"Hi, My name is Yudong Lu!",
+		`Hi, My name is ${pageInformation?.title}!`,
 		"Guy who loves coffee.tsx",
 		"<ButLovesToCodeMore />",
 		],
 		loop: true,
 		delaySpeed: 2000,
 	})
+	
+
 	return (
 	<div className="h-screen flex flex-col space-y-8 items-center 
 	justify-center text-center overflow-hidden">
 		<BackgroundCircles />
 		<img 
 		className="relative rounded-full h-36 w-36 mx-auto object-cover"
-		src="https://yudonglu.s3.amazonaws.com/coding.jpg"
+		src={urlFor(pageInformation?.heroImage).url()}
 		/>
 
 		<div className='z-10'>
 			<h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]" >
-			Software Engineer
+			{pageInformation?.role}
 			</h2>
 			<h1 className="text-4xl lg:text-5xl font-semibold px-10">
 				<span className="mr-3">{text}</span>

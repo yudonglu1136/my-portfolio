@@ -1,31 +1,34 @@
 import React from "react";
-
 import {motion} from "framer-motion";
+import {urlFor} from "../sanity";
+import {Skill} from "../typings";
 
 type Props = {
-	directionalLeft?: boolean;
+	directionLeft?: boolean;
+	skill : Skill;
 
 };
 
-function SkillCard({directionalLeft}: Props){
+function SkillCard({skill, directionLeft}: Props){
+	
 	return( <div className="group relative flex cursor-pointer"> 
 		<motion.img
-			intial={{
-				x: directionalLeft ? -200 : 200,
+			initial={{
+				x: directionLeft ? -200 : 200,
 				opacity : 0
 
 			}}
-			transition={{duration:1.5}}
+			transition={{duration:1}}
 			whileInView={{opacity:1,x:0}}
-			src="https://yudonglu.s3.amazonaws.com/Docker-Logo-2013.png"
-			className="rounded-full border border-gray-500 object-cover w-24 h-24
-			xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out"
+			src= {urlFor(skill?.image).url()}
+			className="rounded-full border border-gray-500 object-cover w-20 h-20
+			xl:w-26 xl:h-26 filter group-hover:grayscale transition duration-300 ease-in-out"
 		/>
 		<div className="absolute opacity-0 group-hover:opacity-80 transition duration-300
-		ease-in-out group-hover:bg-white h-24 w-24 md:w-28 md:h-28
-		xl:w-32 xl:h-32 rounded-full z-0">
+		ease-in-out group-hover:bg-white h-20 w-20
+		xl:w-26 xl:h-26 rounded-full z-0">
 			<div className="flex items-center justify-center h-full">
-			<p className="text-3xl font-bold text-black opacity-100">100%</p>
+			<p className="text-2xl font-bold text-black opacity-100">{skill?.progress}%</p>
 			</div>
 		</div>
 

@@ -1,4 +1,4 @@
-interface SanityBody{
+ interface SanityBody{
 
 	_createdAt: string;
 	_id: string;
@@ -41,7 +41,8 @@ export interface Skill extends SanityBody{
 	progress: number;
 	title: string;
 }
-export interface Experience extends SanityBody{
+export interface Experience extends SanityBody {
+
 	_type: "experience";
 	company:string;
 	companyImage: Image;

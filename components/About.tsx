@@ -1,9 +1,14 @@
 import React from "react";
 import {motion} from "framer-motion";
+import {PageInformation} from "../typings"
+import {urlFor} from "../sanity";
 
-type Props = {};
+type Props = {
 
-export default function About({}: Props){
+	pageInformation: PageInformation
+};
+
+export default function About({pageInformation}: Props){
 	return (
 
 	<motion.div 
@@ -27,7 +32,7 @@ export default function About({}: Props){
 		transition={{duration:1}}
 		viewport={{once:true}}
 
-		src="https://yudonglu.s3.amazonaws.com/Yudong.jpeg"
+		src={urlFor(pageInformation?.profilePic).url()}
 		className="-mb-20 mb:mb-0 :pd-5 flex-shrink-0 w-56 h-56 rounded-full object-cover
 		md:rounded-lg md:w-64 md:h-65 xl:w-[500px] xl:h-[500px]"/>
 
@@ -35,7 +40,7 @@ export default function About({}: Props){
 		<div className="space-y-10 px-0 md:px-10">
 			<h4 className="text-4xl font-semibold">
 			Here is a <span className='underline decoration-[#F7AB0A]/50'>little</span> background</h4>
-		<p className="text-base">I am always into emerging technologies, solid analytic and development skills was built base on my education background (AI and electronics engineering). By holding several Defi positions, I was being exposed to blockchain technologies and enchanted by prospect, I would love to join this revolution to reform the finance system as a Blockchain Technology Evangelist.</p>
+		<p className="text-base">{pageInformation?.backgroundInformation}</p>
 		</div>
 	</motion.div>
 	);

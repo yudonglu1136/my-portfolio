@@ -1,9 +1,14 @@
 import React from "react";
 import {motion} from "framer-motion";
 import SkillCard from "./SkillCard";
-type Props = {}
+import {Skill} from "../typings";
 
-function Skills({}: Props){
+type Props = {
+	skills: Skill[]
+}
+
+function Skills({skills}: Props){
+
 	return (
 		<motion.div 
 
@@ -13,16 +18,16 @@ function Skills({}: Props){
 		tracking-[20px] text-gray-500 text-2xl">Skills</h3>
 
 		<h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm"> Hover over a skill for current proficiency</h3>
-		<div className="grid top-44 grid-cols-4 gap-5">
-		<SkillCard />
-		<SkillCard />
-		<SkillCard />
-		<SkillCard />
-		<SkillCard />
-		<SkillCard />
-		<SkillCard />
-		<SkillCard />
-		<SkillCard />
+		<div className="top-99 grid grid-cols-4 gap-5">
+
+		{skills.slice(0, skills.length/2)?.map((skill,i) => (
+			
+			<SkillCard key={skill._id} skill={skill} directionLeft={false}/>
+		))}
+		{skills.slice(skills.length/2, skills.length)?.map((skill,i) => (
+			
+			<SkillCard key={skill._id} skill={skill} directionLeft={true} />
+		))}
 
 		</div>
 		</motion.div>
