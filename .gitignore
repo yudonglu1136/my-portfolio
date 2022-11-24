@@ -4,7 +4,7 @@
 dist
 .next
 target
-packages/next/wasm/@next
+next/wasm/@next
 
 # dependencies
 /node_modules

@@ -10,6 +10,7 @@ import { createClient } from "next-sanity";
 const query = groq`
 	*[_type == "social"]
 `;
+
 type Data = {
 	socials: Social[]
 }
